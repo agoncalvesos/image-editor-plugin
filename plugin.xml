@@ -36,7 +36,8 @@
         <source-file src="src/android/ImageEditorPlugin.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
         <source-file src="src/android/IntentsDefinition.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
         <source-file src="src/android/MediaFunctions.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
-        <framework src="src/android/libs/photoeditorsdk" custom="true"></framework>
-        <framework src="src/android/libs/photoeditor" custom="true"></framework>
+        <framework src="src/android/libs/photoeditorsdk" custom="true" />
+        <framework src="src/android/libs/photoeditor" custom="true" />
+        <framework src="extented-gradle.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>
