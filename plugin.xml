@@ -6,7 +6,7 @@
     <js-module name="ImageEditorPlugin" src="www/ImageEditorPlugin.js">
         <clobbers target="imageeditorplugin" />
     </js-module>
-    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="ImageEditorPlugin">
