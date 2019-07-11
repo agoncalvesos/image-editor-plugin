@@ -1,0 +1,14 @@
+{
+  "name": "com.outsystems.imageeditorplugin",
+  "version": "1.0.1",
+  "description": "A plugin to edit images in android and ios",
+  "cordova": {
+    "id": "com.outsystems.imageeditorplugin",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "André Gonçalves",
+  "license": "ISC"
+}

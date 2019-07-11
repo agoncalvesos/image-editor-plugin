@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="image-editor-plugin" version="1.0.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ImageEditorPlugin</name>
+    <js-module name="ImageEditorPlugin" src="www/ImageEditorPlugin.js">
+        <clobbers target="imageeditorplugin" />
+    </js-module>
+    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ImageEditorPlugin">
+                <param name="ios-package" value="ImageEditorPlugin" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/ImageEditorPlugin.swift" />
+        <podspec>
+            <config>
+                <source url="https://github.com/brightcove/BrightcoveSpecs.git" />
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+                <source url="https://github.com/eventtus/photo-editor.git" />
+            </config>
+            <pods use-frameworks="true">
+                <pod name="iOSPhotoEditor" />
+            </pods>
+        </podspec>
+    </platform>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="ImageEditorPlugin">
+                <param name="android-package" value="com.outsystems.imageeditorplugin.ImageEditorPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/FileUtils.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
+        <source-file src="src/android/ImageEditorPlugin.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
+        <source-file src="src/android/IntentsDefinition.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
+        <source-file src="src/android/MediaFunctions.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
+    </platform>
+</plugin>
