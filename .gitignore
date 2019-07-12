@@ -1,1 +1,2 @@
-!node_modules/xcode/
+node_modules/*
+!node_modules/xcode
