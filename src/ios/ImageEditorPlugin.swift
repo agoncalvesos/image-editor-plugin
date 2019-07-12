@@ -65,9 +65,9 @@ import iOSPhotoEditor
         //photoEditor.colors = [.red, .blue, .green]
         
         //Stickers that the user will choose from to add on the image
-        for i in 0...10 {
+        /*for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
-        }
+        }*/
         
         //To hide controls - array of enum control
         //photoEditor.hiddenControls = [.crop, .draw, .share]
