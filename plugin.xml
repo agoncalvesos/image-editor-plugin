@@ -6,14 +6,14 @@
     <js-module name="ImageEditorPlugin" src="www/ImageEditorPlugin.js">
         <clobbers target="imageeditorplugin" />
     </js-module>
-    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
-    <hook type="before_plugin_install" src="hooks/install_prerequisites.js" />
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="ImageEditorPlugin">
                 <param name="ios-package" value="ImageEditorPlugin" />
             </feature>
         </config-file>
+        <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+        <hook type="before_plugin_install" src="hooks/install_prerequisites.js" />
         <source-file src="src/ios/ImageEditorPlugin.swift" />
         <podspec>
             <config>
@@ -37,6 +37,20 @@
         <source-file src="src/android/ImageEditorPlugin.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
         <source-file src="src/android/IntentsDefinition.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
         <source-file src="src/android/MediaFunctions.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
+
+        <!--<source-file src="src/ios/Assets.xcassets/0.imageset/0.png"/>
+        <source-file src="src/ios/Assets.xcassets/1.imageset/1.png"/>
+        <source-file src="src/ios/Assets.xcassets/2.imageset/2.png"/>
+        <source-file src="src/ios/Assets.xcassets/3.imageset/3.png"/>
+        <source-file src="src/ios/Assets.xcassets/4.imageset/4.png"/>
+        <source-file src="src/ios/Assets.xcassets/5.imageset/5.png"/>
+        <source-file src="src/ios/Assets.xcassets/6.imageset/6.png"/>
+        <source-file src="src/ios/Assets.xcassets/7.imageset/7.png"/>
+        <source-file src="src/ios/Assets.xcassets/8.imageset/8.png"/>
+        <source-file src="src/ios/Assets.xcassets/9.imageset/9.png"/>
+        <source-file src="src/ios/Assets.xcassets/10.imageset/10.png"/>-->
+
+
         <framework src="src/android/libs/photoeditorsdk" custom="true" />
         <framework src="src/android/libs/photoeditor" custom="true" />
         <framework src="extented-gradle.gradle" custom="true" type="gradleReference" />
