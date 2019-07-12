@@ -16,4 +16,3 @@ module.exports = function (context) {
 
   return deferral.promise;
 };
- No newline at end of file
