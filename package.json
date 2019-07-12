@@ -6,6 +6,11 @@
     "id": "com.outsystems.imageeditorplugin",
     "platforms": []
   },
+  "dependencies": {
+    "glob": "^7.1.3",
+    "semver": "^6.0.0",
+    "xcode": "^2.0.0"
+  },
   "keywords": [
     "ecosystem:cordova"
   ],
