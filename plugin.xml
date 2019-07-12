@@ -13,6 +13,7 @@
             </feature>
         </config-file>
         <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+        <hook type="before_plugin_install" src="hooks/install_prerequisites.js" />
         <source-file src="src/ios/ImageEditorPlugin.swift" />
         <podspec>
             <config>
