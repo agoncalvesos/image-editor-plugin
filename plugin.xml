@@ -14,7 +14,7 @@
         </config-file>
         <dependency url="https://github.com/agoncalvesos/cordova-plugin-add-swift-support" commit="513e43f94ae94ad609d49f24e7dca23a4c358095" id="cordova-plugin-add-swift-support"/>
         <source-file src="src/ios/ImageEditorPlugin.swift" />
-        <podspec>
+        <!-- <podspec>
             <config>
                 <source url="https://github.com/brightcove/BrightcoveSpecs.git" />
                 <source url="https://github.com/CocoaPods/Specs.git"/>
@@ -23,7 +23,8 @@
             <pods use-frameworks="true">
                 <pod name="iOSPhotoEditor" />
             </pods>
-        </podspec>
+        </podspec> -->
+        <framework src="iOSPhotoEditor" type="podspec" spec="~> 0.6" />
     </platform>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
