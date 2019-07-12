@@ -12,7 +12,6 @@
                 <param name="ios-package" value="ImageEditorPlugin" />
             </feature>
         </config-file>
-        <dependency url="https://github.com/agoncalvesos/cordova-plugin-add-swift-support"/>
         <source-file src="src/ios/ImageEditorPlugin.swift" />
         <podspec>
             <config>
