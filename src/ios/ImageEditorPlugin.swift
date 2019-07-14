@@ -1,5 +1,5 @@
 import UIKit
-import iOSPhotoEditor
+import OSPhotoEditor
 
 @objc(ImageEditorPlugin) class ImageEditorPlugin : CDVPlugin {
     

@@ -23,8 +23,8 @@
             <pods use-frameworks="true">
                 <pod name="iOSPhotoEditor" />
             </pods>
-        </podspec> -->
-        <framework src="iOSPhotoEditor" type="podspec" spec="~> 0.6" />
+        </podspec>-->
+        <framework src="src/ios/libs/OSPhotoEditor/OSPhotoEditor.framework" custom="true" />
     </platform>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
