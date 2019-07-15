@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/veyron/Work/Outsystems/Plugins/ImageEditor/cordova/image-editor-plugin/src/ios/libs/OSPhotoEditor/build/Build/Products/Release-iphoneos/OSPhotoEditor.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/veyron/Work/Outsystems/Plugins/ImageEditor/cordova/image-editor-plugin/src/ios/libs/OSPhotoEditor/build/Build/Intermediates.noindex/OSPhotoEditor.build/Release-iphoneos/OSPhotoEditor.build/unextended-module.modulemap',
+    }]
+  }]
+}

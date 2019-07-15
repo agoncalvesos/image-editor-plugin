@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		87D427D022DC01A9007427F4 /* OSPhotoEditor-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 87D427D322DC01A9007427F4 /* Build configuration list for PBXAggregateTarget "OSPhotoEditor-Universal" */;
+			buildPhases = (
+				87D427D422DC01FB007427F4 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "OSPhotoEditor-Universal";
+			productName = "OSPhotoEditor-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		87EAAD5822D936E30044CF9F /* OSPhotoEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 87EAAD5622D936E30044CF9F /* OSPhotoEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87EAAD8722D9370F0044CF9F /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAAD5E22D9370C0044CF9F /* CropViewController.swift */; };
@@ -215,9 +229,13 @@
 		87EAAD4A22D936E30044CF9F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "André Gonçalves";
 				TargetAttributes = {
+					87D427D022DC01A9007427F4 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					87EAAD5222D936E30044CF9F = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
@@ -238,6 +256,7 @@
 			projectRoot = "";
 			targets = (
 				87EAAD5222D936E30044CF9F /* OSPhotoEditor */,
+				87D427D022DC01A9007427F4 /* OSPhotoEditor-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +282,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87D427D422DC01FB007427F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# 1\n# Set bash script to exit immediately if any commands fail.\nset -e\n# 2\n# Setup some constants for use later on.\nFRAMEWORK_NAME=\"OSPhotoEditor\"\nOUTPUT_DIR=\"${SRCROOT}/build\"\n# 3\n# If remnants from a previous build exist, delete them.\nif [ -d \"${OUTPUT_DIR}\" ]; then\nrm -rf \"${OUTPUT_DIR}\"\nfi\n# 4\n# Build the framework for device and for simulator (using\n# all needed architectures).\n\nxcodebuild -project \"${FRAMEWORK_NAME}.xcodeproj\" -scheme \"${FRAMEWORK_NAME}\" -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes -sdk \"iphoneos\" -derivedDataPath \"${OUTPUT_DIR}\"\nxcodebuild -project \"${FRAMEWORK_NAME}.xcodeproj\" -scheme \"${FRAMEWORK_NAME}\" -configuration Release -arch x86_64 -arch i386 only_active_arch=no defines_module=yes -sdk \"iphonesimulator\" -derivedDataPath \"${OUTPUT_DIR}\"\n\n# 5\n# Remove .framework file if exists from previous run.\nif [ -d \"${OUTPUT_DIR}/${FRAMEWORK_NAME}.framework\" ]; then\nrm -rf \"${OUTPUT_DIR}/${FRAMEWORK_NAME}.framework\"\nfi\n# 6\n# Copy the device version of framework.\ncp -r \"${OUTPUT_DIR}/Build/Products/Release-iphoneos/${FRAMEWORK_NAME}.framework\" \"${OUTPUT_DIR}/${FRAMEWORK_NAME}.framework\"\n# 7\n# Replace the framework executable within the framework with\n# a new version created by merging the device and simulator\n# frameworks' executables with lipo.\nlipo -create -output \"${OUTPUT_DIR}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${OUTPUT_DIR}/Build/Products/Release-iphoneos/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${OUTPUT_DIR}/Build/Products/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\"\n# 8\n# Copy the Swift module mappings for the simulator into the\n# framework. The device mappings already exist from step 6.\ncp -r \"${OUTPUT_DIR}/Build/Products/Release-iphonesimulator/${FRAMEWORK_NAME}.framework/Modules/${FRAMEWORK_NAME}.swiftmodule/\" \"${OUTPUT_DIR}/${FRAMEWORK_NAME}.framework/Modules/${FRAMEWORK_NAME}.swiftmodule\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87EAAD4F22D936E30044CF9F /* Sources */ = {
@@ -313,6 +352,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		87D427D122DC01A9007427F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EL7YK28CRE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		87D427D222DC01A9007427F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EL7YK28CRE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		87EAAD5922D936E30044CF9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,6 +546,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		87D427D322DC01A9007427F4 /* Build configuration list for PBXAggregateTarget "OSPhotoEditor-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87D427D122DC01A9007427F4 /* Debug */,
+				87D427D222DC01A9007427F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		87EAAD4D22D936E30044CF9F /* Build configuration list for PBXProject "OSPhotoEditor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
