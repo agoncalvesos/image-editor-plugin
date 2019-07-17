@@ -135,5 +135,4 @@ extension PhotoEditorViewController {
             }
         }
     }
-    
 }
