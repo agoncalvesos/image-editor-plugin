@@ -60,7 +60,6 @@
 		87EAADAB22D9370F0044CF9F /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87EAAD8422D9370F0044CF9F /* StickerCollectionViewCell.xib */; };
 		87EAADAC22D9370F0044CF9F /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAAD8522D9370F0044CF9F /* StickerCollectionViewCell.swift */; };
 		87EAADAD22D9370F0044CF9F /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAAD8622D9370F0044CF9F /* ColorCollectionViewCell.swift */; };
-		87EAADC922D93D330044CF9F /* TestOla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EAADC822D93D330044CF9F /* TestOla.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +104,6 @@
 		87EAAD8422D9370F0044CF9F /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		87EAAD8522D9370F0044CF9F /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		87EAAD8622D9370F0044CF9F /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
-		87EAADC822D93D330044CF9F /* TestOla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOla.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +176,6 @@
 				87EAAD7F22D9370E0044CF9F /* UIView+Image.swift */,
 				87EAAD5622D936E30044CF9F /* OSPhotoEditor.h */,
 				87EAAD5722D936E30044CF9F /* Info.plist */,
-				87EAADC822D93D330044CF9F /* TestOla.swift */,
 			);
 			path = OSPhotoEditor;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				87EAAD9C22D9370F0044CF9F /* StickersViewController.swift in Sources */,
 				87EAAD9522D9370F0044CF9F /* UIImageView+Alpha.swift in Sources */,
 				87EAAD9922D9370F0044CF9F /* ResizeControl.swift in Sources */,
-				87EAADC922D93D330044CF9F /* TestOla.swift in Sources */,
 				87EAAD9B22D9370F0044CF9F /* CropRectView.swift in Sources */,
 				87EAADA022D9370F0044CF9F /* Protocols.swift in Sources */,
 				87EAADAD22D9370F0044CF9F /* ColorCollectionViewCell.swift in Sources */,
