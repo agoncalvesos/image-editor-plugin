@@ -20,7 +20,7 @@ cordova plugin add https://github.com/agoncalvesos/image-editor-plugin.git
 Opens the image editor main screen, allowing the user to use all the features, on the base64 passed as input parameter
 
 ```javascript
-windown.imageeditorplugin.editImageFromBase64(base64, onSuccess, onError);
+window.imageeditorplugin.editImageFromBase64(base64, onSuccess, onError);
 ```
 
 ## editImageFromCamera
@@ -28,7 +28,7 @@ windown.imageeditorplugin.editImageFromBase64(base64, onSuccess, onError);
 Opens the phone camera allowing the user to take a photo and edit it right away
 
 ```javascript
-windown.imageeditorplugin.editImageFromCamera(onSuccess, onError);
+window.imageeditorplugin.editImageFromCamera(onSuccess, onError);
 ```
 
 ## editImageFromGallery
@@ -36,7 +36,7 @@ windown.imageeditorplugin.editImageFromCamera(onSuccess, onError);
 Opens the phone gallery allowing the user to choose a photo and edit it right away
 
 ```javascript
-windown.imageeditorplugin.editImageFromGallery(onSuccess, onError);
+window.imageeditorplugin.editImageFromGallery(onSuccess, onError);
 ```
 
 ## Description
