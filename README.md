@@ -56,7 +56,7 @@ Create a button on your page
 <button id="testeditorbase64">edit base64 image</button>
 <button id="testeditorcamera">edit from camera</button>
 <button id="testeditorgallery">edit from gallery</button>
-<img id="myImage" height="400" width="600" src="data:image/jpeg,/base64string..."/>
+<img id="base64image" height="400" width="600" src="data:image/jpeg,/base64string..."/>
 ```
 
 Then add click event
