@@ -12,7 +12,7 @@ import OSPhotoEditor
     func editImage(_ command: CDVInvokedUrlCommand) {
         self.callbackId = command.callbackId;
         
-        var sourceType = UIImagePickerControllerSourceType.photoLibrary;
+        var sourceType = UIImagePickerController.SourceType.photoLibrary;
         let sourceTypeString = command.arguments[0] as? String;
         if ( sourceTypeString == "sourcetype" ){
             if (command.arguments[1] as? String == "camera"){
@@ -101,10 +101,10 @@ extension ImageEditorPlugin: PhotoEditorDelegate {
 
 extension ImageEditorPlugin: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
+     func imagePickerController(_ picker: UIImagePickerController,
+                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             picker.dismiss(animated: true, completion: nil)
             return
         }
@@ -123,7 +123,7 @@ extension UIImage {
     
     public func toBase64() -> String? {
         let imageData: Data?
-        imageData = UIImageJPEGRepresentation(self, 1)//compression
+        imageData = self.jpegData(compressionQuality: 1)//compression
         return imageData?.base64EncodedString()
     }
 }

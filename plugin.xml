@@ -11,8 +11,13 @@
             <feature name="ImageEditorPlugin">
                 <param name="ios-package" value="ImageEditorPlugin" />
             </feature>
-        </config-file>
+        </config-file>https://github.com/andregrillo/cordova-plugin-add-swift-support.git
+        <dependency url="https://github.com/agoncalvesos/cordova-plugin-add-swift-support" id="cordova-plugin-add-swift-support"/>
+        <!-- 
         <dependency url="https://github.com/agoncalvesos/cordova-plugin-add-swift-support" commit="513e43f94ae94ad609d49f24e7dca23a4c358095" id="cordova-plugin-add-swift-support"/>
+        <framework src="iOSPhotoEditor" type="podspec" embed="true" /> 
+        <framework src="iOSPhotoEditor" type="podspec" />-->
+
         <source-file src="src/ios/ImageEditorPlugin.swift" />
         <!-- <podspec>
             <config>
@@ -23,9 +28,11 @@
             <pods use-frameworks="true">
                 <pod name="iOSPhotoEditor" />
             </pods>
-        </podspec>-->
-        <framework src="src/ios/libs/OSPhotoEditor/OSPhotoEditor.framework" target-dir="lib" framework="true" />
+        </podspec>
+        
+        <framework src="src/libs/OSPhotoEditor/OSPhotoEditor.framework" target-dir="lib" framework="true" />-->
         <framework src="src/ios/libs/OSPhotoEditor/OSPhotoEditor.framework" embed="true" custom="true" />
+        
     </platform>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
