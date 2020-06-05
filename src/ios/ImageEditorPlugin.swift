@@ -59,6 +59,7 @@ import OSPhotoEditor
     
     func presentImageEditorViewController (image: UIImage){
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
+        photoEditor.modalPresentationStyle = .fullScreen
         photoEditor.photoEditorDelegate = self
         photoEditor.image = image
         //Colors for drawing and Text, If not set default values will be used

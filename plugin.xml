@@ -32,6 +32,17 @@
         
         <framework src="src/libs/OSPhotoEditor/OSPhotoEditor.framework" target-dir="lib" framework="true" />-->
         <framework src="src/ios/libs/OSPhotoEditor/OSPhotoEditor.framework" embed="true" custom="true" />
+
+        <!-- <preference name="PHOTO_LIBRARY_USAGE_DESCRIPTION" default=" " /> -->
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>"Our app needs permission to access photos on your device"</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+            <string>"Our app needs permission to add photos in your device"</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>"Our app needs permission to access the camera"</string>
+        </config-file>
         
     </platform>
     <platform name="android">
