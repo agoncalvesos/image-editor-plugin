@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		aRxasMJFTn/7JSHnbbDlDRcUJXw=
+		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/objects-13.0+.nib</key>
 		<data>
-		zkt5BzyzqTwJa2pYeADmO92/EYM=
+		0lyy9smQDnUUv/qftb31qbh2zjg=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/runtime.nib</key>
 		<data>
-		Z+dz/tVXjgR9zHpjTMEgzgeof9c=
+		2TBbX+mbw0mO+stS+DgoWR7Ru80=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -18,35 +22,35 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/objects-13.0+.nib</key>
 		<data>
-		Y//ilSO7TgyDyqj2oUPR78souFE=
+		Jh2XdmFaj8NMrgyebXdmqei/QJE=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/runtime.nib</key>
 		<data>
-		P3zZV45VffkeKHu/rraVeM4GUTA=
+		VHPRFahzK9Mw+uL9K7yPfDRaY4o=
 		</data>
 		<key>ColorCollectionViewCell.nib/objects-12.3+.nib</key>
 		<data>
-		dppCI4ek4RFG0Jq50OOz6yKDG80=
+		kpsQ8c5cLEGp/wEVXco3b8iHJ04=
 		</data>
 		<key>ColorCollectionViewCell.nib/objects-13.0+.nib</key>
 		<data>
-		QCy63nV1o+30SRbbqPECH5N2IFI=
+		hrYAROYG9V3S934+VlkJO6UVzX0=
 		</data>
 		<key>ColorCollectionViewCell.nib/runtime.nib</key>
 		<data>
-		sxDMQ+fJeUy0AfeSG/pL2i8gw6I=
+		fOkBBPyPMJ+ayQWETxOIjUEbm+E=
 		</data>
 		<key>EmojiCollectionViewCell.nib/objects-12.3+.nib</key>
 		<data>
-		G4FuiZOCyTlGXFPXpbxDP0z7q44=
+		I5S8dM23XwLxP8s54lhbLzL7uWg=
 		</data>
 		<key>EmojiCollectionViewCell.nib/objects-13.0+.nib</key>
 		<data>
-		S5e/QMImFWHeJ7bpp9VGr2ArScM=
+		OqUYAs6qLWcKubwPPGozafp1azA=
 		</data>
 		<key>EmojiCollectionViewCell.nib/runtime.nib</key>
 		<data>
-		YY/dDRfVTuxYislTbPqxVPKHi4Q=
+		/0MAYtEDIGLqsaRjBXF+9mz+WWA=
 		</data>
 		<key>Headers/OSPhotoEditor-Swift.h</key>
 		<data>
@@ -62,11 +66,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/objects-13.0+.nib</key>
 		<data>
-		SnlRCohdj0Fpw3Hbk5tndOLb33w=
+		0h/cnCyRJNxbJ3Go5qPs5t/oBJA=
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/runtime.nib</key>
 		<data>
-		hnNesQZvLPErlJoBY3MbbJ9g264=
+		5ys1HX1HwGB8ojFUJDDO9RzAwto=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -74,11 +78,11 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/objects-13.0+.nib</key>
 		<data>
-		Oqci8uFs+pHrzC/KWjgSwfoR40Y=
+		1KARbDzp/jIz35bLTPY3jaWUgbQ=
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/runtime.nib</key>
 		<data>
-		QCdvaUYxKwnaIbHh65q+QINyjOc=
+		K+3Pue04MeiOdjxKVil3wka9j1w=
 		</data>
 		<key>Modules/OSPhotoEditor.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -114,35 +118,35 @@
 		</data>
 		<key>PhotoEditorViewController.nib/objects-11.0+.nib</key>
 		<data>
-		lsmnYtwAcFF3dGdeQqVzhoOdbk4=
+		8OLTWn+LcCa1bFUkYrNEXStd9s0=
 		</data>
 		<key>PhotoEditorViewController.nib/objects-13.0+.nib</key>
 		<data>
-		xGisZdeDgQ/nTe94hILiCFGV2sk=
+		dH1il3zumakum3b32twWxy/Ehag=
 		</data>
 		<key>PhotoEditorViewController.nib/runtime.nib</key>
 		<data>
-		MJWYTveIlA+4BVZQ/HX/aAU/L/M=
+		GfaiBMmZiQQAWR8DfX+beiy6q58=
 		</data>
 		<key>StickerCollectionViewCell.nib/objects-12.3+.nib</key>
 		<data>
-		/VWEJKWXedOZM5ig4/YeYRS2An4=
+		KXtdAULcImFr3FNp89gk0V4HeOY=
 		</data>
 		<key>StickerCollectionViewCell.nib/objects-13.0+.nib</key>
 		<data>
-		5EKC237Eiwbc0ay06e+lCaz2Z+k=
+		vv1mazTAZS6CdqsDhRFOtu+OroU=
 		</data>
 		<key>StickerCollectionViewCell.nib/runtime.nib</key>
 		<data>
-		JXGXnoXfOU1aUouj4ugLVxlFh1M=
+		qLhtRwwCPgWaqExYfI9y5sNqc5Q=
 		</data>
 		<key>StickersViewController.nib/objects-13.0+.nib</key>
 		<data>
-		5VOt0swh34oJNXCcvu8wsffqMr4=
+		yvuI5Q/7kS2cPaVe2tgTr3e7Wz8=
 		</data>
 		<key>StickersViewController.nib/runtime.nib</key>
 		<data>
-		ZdV77HbnjOAlt8tw7zJa0YqgzHU=
+		/6N1eyuBfpk4Xk7bdrgjFmF7QGM=
 		</data>
 		<key>icomoon.ttf</key>
 		<data>
@@ -151,26 +155,37 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aRxasMJFTn/7JSHnbbDlDRcUJXw=
+			</data>
+			<key>hash2</key>
+			<data>
+			M+wEd/HC8Z5sWN0BX5etmhPdP6gmN9xgOa70b/dvy40=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zkt5BzyzqTwJa2pYeADmO92/EYM=
+			0lyy9smQDnUUv/qftb31qbh2zjg=
 			</data>
 			<key>hash2</key>
 			<data>
-			aSXp0KC4mt4EL6nxXcNhcltarvrP6qhaozTZf+bvp58=
+			qBwHNSRtyRUfc2zang/UkizKEoYDLKJP3WsoAtzlyKA=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Z+dz/tVXjgR9zHpjTMEgzgeof9c=
+			2TBbX+mbw0mO+stS+DgoWR7Ru80=
 			</data>
 			<key>hash2</key>
 			<data>
-			rvGpWHF8lLk/sC8J2iFzLAsBDHYx8nkIAuTtX4swdI4=
+			e2lZuVFSi2uRn+dBVutZzf5+mM8Au0i4W0RXjm8hDcM=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -188,88 +203,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y//ilSO7TgyDyqj2oUPR78souFE=
+			Jh2XdmFaj8NMrgyebXdmqei/QJE=
 			</data>
 			<key>hash2</key>
 			<data>
-			fzskyWyxTZrOQX4w37bcyE5Xf7WsiBM2eCE3e9oCR8Q=
+			t0cSzLPvo2wqJrlSOm9+8Rp/9GucQjnC/ntsQUtqnzI=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			P3zZV45VffkeKHu/rraVeM4GUTA=
+			VHPRFahzK9Mw+uL9K7yPfDRaY4o=
 			</data>
 			<key>hash2</key>
 			<data>
-			b/qSzRd8ykKjQs2/XJan7buXYSwOeGYWHK20G0anF4s=
+			Rs1CyDYVUWOZ/kcjtJogVEIJwaYQZ8ZtjSTEdZbSKE0=
 			</data>
 		</dict>
 		<key>ColorCollectionViewCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dppCI4ek4RFG0Jq50OOz6yKDG80=
+			kpsQ8c5cLEGp/wEVXco3b8iHJ04=
 			</data>
 			<key>hash2</key>
 			<data>
-			B5Svf9Ys/lhFz63ETsKFbZ5ksaalwFcwn7FNel9IFUQ=
+			/RANtUFv8OLOmKLUTtgWQOcap7TGa2zRLVkBAoeqfSQ=
 			</data>
 		</dict>
 		<key>ColorCollectionViewCell.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QCy63nV1o+30SRbbqPECH5N2IFI=
+			hrYAROYG9V3S934+VlkJO6UVzX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			zkBYAK+V+uU4UEr1+IUCFszEe5DxacXgz3zWKzXrXtU=
+			zwWrAfmyLXRhd7cCFmH9meSfcFVBddvsCacu8RQH1Mk=
 			</data>
 		</dict>
 		<key>ColorCollectionViewCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sxDMQ+fJeUy0AfeSG/pL2i8gw6I=
+			fOkBBPyPMJ+ayQWETxOIjUEbm+E=
 			</data>
 			<key>hash2</key>
 			<data>
-			pim3Vm2Z3UMl9ER1oSMfvNIglDXI7MLXwBiEsXr60a4=
+			a+vvD+f+tAER/y+M0N2IGMq/qU9cNpEvaNbzL5mB36M=
 			</data>
 		</dict>
 		<key>EmojiCollectionViewCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			G4FuiZOCyTlGXFPXpbxDP0z7q44=
+			I5S8dM23XwLxP8s54lhbLzL7uWg=
 			</data>
 			<key>hash2</key>
 			<data>
-			7AHrzh1romDiz0jnmHidbB0WrtP7QVd6JX8denbqHOU=
+			45JkhP5ZWOeQ2Q1ogwgms89xiQBhBgUFjDbgQ9QLpnw=
 			</data>
 		</dict>
 		<key>EmojiCollectionViewCell.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			S5e/QMImFWHeJ7bpp9VGr2ArScM=
+			OqUYAs6qLWcKubwPPGozafp1azA=
 			</data>
 			<key>hash2</key>
 			<data>
-			l+Mw2ssSndwqijSGR6VRgp0PTDIGKdb++u2IjyqdgGE=
+			dXQgZnLgb6+sMBs3mqTDkzCRrnecNnaTrrQrUJoBxoo=
 			</data>
 		</dict>
 		<key>EmojiCollectionViewCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YY/dDRfVTuxYislTbPqxVPKHi4Q=
+			/0MAYtEDIGLqsaRjBXF+9mz+WWA=
 			</data>
 			<key>hash2</key>
 			<data>
-			nMGaHBHZkINsbHzUf7lSYExWhIke5Fgp+c0INXsUO3M=
+			uif4BpyIAs+OD43v/PhquiI13iKmE3XYCb4TZ04MXV0=
 			</data>
 		</dict>
 		<key>Headers/OSPhotoEditor-Swift.h</key>
@@ -298,22 +313,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SnlRCohdj0Fpw3Hbk5tndOLb33w=
+			0h/cnCyRJNxbJ3Go5qPs5t/oBJA=
 			</data>
 			<key>hash2</key>
 			<data>
-			o92/taNMw9QIDkxxbj9cXMY+mcml4QVnHzr/9ab8/SM=
+			4rH+VsSBLd2z2LDPOb+wIxPcd2iIgsKWtMjqUFiO/QU=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hnNesQZvLPErlJoBY3MbbJ9g264=
+			5ys1HX1HwGB8ojFUJDDO9RzAwto=
 			</data>
 			<key>hash2</key>
 			<data>
-			T1Pf4jN12DM2cpxvdZSi+uUR9cLguB17FpWCDjuc/to=
+			txXCmu+Ml+oLs1DFvuMCERGK5YGX+EGy+Rd/gLMDb+s=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -331,22 +346,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Oqci8uFs+pHrzC/KWjgSwfoR40Y=
+			1KARbDzp/jIz35bLTPY3jaWUgbQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			PRuuTYdFQZD0DZ4bIQybA088MMBzxQcxpNzUCU57lsA=
+			G+z+LDc04VpIMBV4OmppvyOXOJuJLO0Svv+DIn8k4tY=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QCdvaUYxKwnaIbHh65q+QINyjOc=
+			K+3Pue04MeiOdjxKVil3wka9j1w=
 			</data>
 			<key>hash2</key>
 			<data>
-			s8lnZJGXoKTHSAoLzgOA8uwmb0b566dgEpo8JARpJ2s=
+			7Wt5pYs5oEsuEVIr0ee/XVtYGabx2PC2b9bu/p/xiPE=
 			</data>
 		</dict>
 		<key>Modules/OSPhotoEditor.swiftmodule/arm.swiftdoc</key>
@@ -441,88 +456,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lsmnYtwAcFF3dGdeQqVzhoOdbk4=
+			8OLTWn+LcCa1bFUkYrNEXStd9s0=
 			</data>
 			<key>hash2</key>
 			<data>
-			RqEvTO3ujhqOhVt0tOxroKQtkn4gs41MWAKkCrQrxNs=
+			7wTPAVsVhy+2akwLhbi0w/hiSCIUITNH+k3IDCOYbCU=
 			</data>
 		</dict>
 		<key>PhotoEditorViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xGisZdeDgQ/nTe94hILiCFGV2sk=
+			dH1il3zumakum3b32twWxy/Ehag=
 			</data>
 			<key>hash2</key>
 			<data>
-			+orgThKPl2KrUvEMb2F8X7o4V8bmsSfLQ02Ew+V4fIs=
+			jA+OSwsLD923OpNBRbpgvZiwMoNCQM5qaRLGZaLmCLk=
 			</data>
 		</dict>
 		<key>PhotoEditorViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MJWYTveIlA+4BVZQ/HX/aAU/L/M=
+			GfaiBMmZiQQAWR8DfX+beiy6q58=
 			</data>
 			<key>hash2</key>
 			<data>
-			fn7yt0KNhOeBTastELXtqdx9Ie5+XJ8WBbL9ZxQXZ50=
+			J9cQrWUph7Xbmaooo3C26+Xn4y9Q96tn2PbjWvBLG9o=
 			</data>
 		</dict>
 		<key>StickerCollectionViewCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/VWEJKWXedOZM5ig4/YeYRS2An4=
+			KXtdAULcImFr3FNp89gk0V4HeOY=
 			</data>
 			<key>hash2</key>
 			<data>
-			dYN/coa0vP3t5lD8Xb+aiXecmHF35Q5cYqxfYd2bP/w=
+			UgMNNixsSkvJK/c4vOXbJzpVrdpH3KJx8M4LPLYbckI=
 			</data>
 		</dict>
 		<key>StickerCollectionViewCell.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5EKC237Eiwbc0ay06e+lCaz2Z+k=
+			vv1mazTAZS6CdqsDhRFOtu+OroU=
 			</data>
 			<key>hash2</key>
 			<data>
-			0wojHGDI4+gcyv4pmAmX3ossP6vKZMJeZc5NjsEaXao=
+			1jphZJpMejwvSNbBhHo8sEVAouP9GabRKCXPbI7+zNE=
 			</data>
 		</dict>
 		<key>StickerCollectionViewCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JXGXnoXfOU1aUouj4ugLVxlFh1M=
+			qLhtRwwCPgWaqExYfI9y5sNqc5Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			J+CCi5Zq+drVvONKkSLeBsfi8/aCKSch6430Q21GWdY=
+			HVQlN+hvmPNDBR9H9OiJj7MumpvpFFXbnGnuqhp5bR0=
 			</data>
 		</dict>
 		<key>StickersViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5VOt0swh34oJNXCcvu8wsffqMr4=
+			yvuI5Q/7kS2cPaVe2tgTr3e7Wz8=
 			</data>
 			<key>hash2</key>
 			<data>
-			mEEhy2w+smYxYKGNMc4JvP6mbzp2qL/16V5z98r38YI=
+			MimuL4ALGo50sjfZhygeJMB9jJRdCLYlOSzuCDaDKLY=
 			</data>
 		</dict>
 		<key>StickersViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZdV77HbnjOAlt8tw7zJa0YqgzHU=
+			/6N1eyuBfpk4Xk7bdrgjFmF7QGM=
 			</data>
 			<key>hash2</key>
 			<data>
-			CjcnRhLp9iK4NsGQullHHYVvCeIxLuScjpec6WRwz1o=
+			KvFBzwto0oActhIaOa/x2TT4lm4HeNHlip6fBrXHJQE=
 			</data>
 		</dict>
 		<key>icomoon.ttf</key>
