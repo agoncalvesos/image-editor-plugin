@@ -28,6 +28,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.outsystems.imageeditorplugin.Intents.IntentsDefinition;
 
+import android.support.v4.content.FileProvider;
+
 public class MediaFunctions {
 
     protected static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY = 0x3;
@@ -135,7 +137,7 @@ public class MediaFunctions {
             Log.d("MediaAbstractActivity", "selected camera path "
                     + selectedOutputPath);
             mediaFile = new File(selectedOutputPath);
-            return Uri.fromFile(mediaFile);
+	    return FileProvider.getUriForFile(ParentActivity, ParentActivity.getApplicationContext().getPackageName() + ".provider", mediaFile);
         } else {
             return null;
         }
