@@ -79,7 +79,12 @@ public class MediaFunctions {
                     ActivityCompat.requestPermissions(ParentActivity,
                             new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
-		    editBase64Image(base64);
+		    	Handler postGrantHandler = new Handler();
+			postGrantHandler.postDelayed(new Runnable() {
+    			public void run() {
+				editBase64Image(base64);}
+			}, 500);
+		    
             }
         });
         builder.setNegativeButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.not_now), new DialogInterface.OnClickListener() {
