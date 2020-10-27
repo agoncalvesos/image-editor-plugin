@@ -58,7 +58,31 @@ public class MediaFunctions {
                     ActivityCompat.requestPermissions(ParentActivity,
                             new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
-                }
+                } 
+            }
+        });
+        builder.setNegativeButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.not_now), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(ParentActivity, ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.media_access_denied_msg), Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
+    }
+	
+	   private void showMenu64(String base64){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ParentActivity);
+        builder.setMessage(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.access_media_permissions_msg));
+        builder.setPositiveButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.continue_txt), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                    ActivityCompat.requestPermissions(ParentActivity,
+                            new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
+					String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+					String imageName = "IMG_" + timeStamp + ".jpg";
+					String selectedOutputPath = com.outsystems.imageeditorplugin.Utils.FileUtils.saveImage("PhotoEditorSDK", imageName, base64);
+					onPhotoTaken(selectedOutputPath);
             }
         });
         builder.setNegativeButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.not_now), new DialogInterface.OnClickListener() {
@@ -110,11 +134,16 @@ public class MediaFunctions {
     }
 
     public void editBase64Image(String base64){
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		int permissionCheck = PermissionChecker.checkCallingOrSelfPermission(ParentActivity,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+			showMenu64(base64);
+			} else {
+		        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageName = "IMG_" + timeStamp + ".jpg";
         String selectedOutputPath = com.outsystems.imageeditorplugin.Utils.FileUtils.saveImage("PhotoEditorSDK", imageName, base64);
-
         onPhotoTaken(selectedOutputPath);
+		}
     }
 
     private Uri getOutputMediaFile() {
