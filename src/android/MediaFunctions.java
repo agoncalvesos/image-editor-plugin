@@ -79,10 +79,7 @@ public class MediaFunctions {
                     ActivityCompat.requestPermissions(ParentActivity,
                             new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
-					String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-					String imageName = "IMG_" + timeStamp + ".jpg";
-					String selectedOutputPath = com.outsystems.imageeditorplugin.Utils.FileUtils.saveImage("PhotoEditorSDK", imageName, base64);
-					onPhotoTaken(selectedOutputPath);
+		    editBase64Image(base64);
             }
         });
         builder.setNegativeButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.not_now), new DialogInterface.OnClickListener() {
