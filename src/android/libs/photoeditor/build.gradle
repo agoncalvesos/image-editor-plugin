@@ -31,8 +31,7 @@ dependencies {
     compile 'fr.avianey.com.viewpagerindicator:library:2.4.1@aar'
     testCompile 'junit:junit:4.12'
 
-    implementation 'com.google.android.material:material:1.0.0'
-	implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
     implementation project(path: ':com.outsystems.imageeditorplugin:photoeditorsdk')
 }
