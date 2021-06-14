@@ -31,7 +31,8 @@ public class ImageEditorPlugin extends CordovaPlugin {
                 String sourceType = args.getString(1);
 
                 if (sourceType.equals("camera")){
-                    mediaFunctions.openCamera();
+                    String path = args.getString(2);
+                    mediaFunctions.onPhotoTaken(path);
                 } else {
                     mediaFunctions.openGallery();
                 }
@@ -60,9 +61,6 @@ public class ImageEditorPlugin extends CordovaPlugin {
                 if (requestCode == IntentsDefinition.GALLERY_INTENT_CALLED || requestCode == IntentsDefinition.GALLERY_KITKAT_INTENT_CALLED) {
                     cordova.setActivityResultCallback(this); //makes this class able to handle the startActivityForResult result
                     mediaFunctions.onActivityResultGallery(requestCode, intent);
-                } else if (requestCode == IntentsDefinition.CAMERA_CODE){
-                    cordova.setActivityResultCallback(this); //makes this class able to handle the startActivityForResult result
-                    mediaFunctions.onActivityResultCamera(requestCode, intent);
                 } else if (requestCode == IntentsDefinition.EDITOR_INTENT_CALLED){
                     String base64 = mediaFunctions.onActivityResultEditor(requestCode, intent);
 

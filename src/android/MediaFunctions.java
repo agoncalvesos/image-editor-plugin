@@ -7,25 +7,30 @@ import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.PermissionChecker;
-import android.util.Base64;
-import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.PermissionChecker;
 
 import com.ahmedadeltito.photoeditor.GalleryUtils;
 import com.ahmedadeltito.photoeditor.PhotoEditorActivity;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import com.outsystems.imageeditorplugin.Intents.IntentsDefinition;
 
 public class MediaFunctions {
@@ -48,11 +53,7 @@ public class MediaFunctions {
         builder.setPositiveButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.continue_txt), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (caller == 1) {
-                    ActivityCompat.requestPermissions(ParentActivity,
-                            new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                            MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_CAMERA);
-                } else {
+                if (caller == 2) {
                     ActivityCompat.requestPermissions(ParentActivity,
                             new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
@@ -90,61 +91,12 @@ public class MediaFunctions {
         }
     }
 
-    public void openCamera() {
-        int permissionCheck = PermissionChecker.checkCallingOrSelfPermission(ParentActivity,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-            Intent photoPickerIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            photoPickerIntent.putExtra(MediaStore.EXTRA_OUTPUT,
-                    getOutputMediaFile());
-            photoPickerIntent.putExtra("outputFormat",
-                    Bitmap.CompressFormat.JPEG.toString());
-            ParentActivity.startActivityForResult(
-                    Intent.createChooser(photoPickerIntent, ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.upload_picker_title)),
-                    IntentsDefinition.CAMERA_CODE);
-        } else {
-            showMenu(1);
-        }
-    }
-
     public void editBase64Image(String base64){
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageName = "IMG_" + timeStamp + ".jpg";
         String selectedOutputPath = com.outsystems.imageeditorplugin.Utils.FileUtils.saveImage("PhotoEditorSDK", imageName, base64);
 
         onPhotoTaken(selectedOutputPath);
-    }
-
-    private Uri getOutputMediaFile() {
-        String selectedOutputPath;
-        if (isSDCARDMounted()) {
-            File mediaStorageDir = new File(
-                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), PHOTO_PATH);
-            // Create a storage directory if it does not exist
-            if (!mediaStorageDir.exists()) {
-                if (!mediaStorageDir.mkdirs()) {
-                    Log.d("MediaAbstractActivity", ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.directory_create_fail));
-                    return null;
-                }
-            }
-            // Create a media file name
-            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            File mediaFile;
-            selectedOutputPath = mediaStorageDir.getPath() + File.separator
-                    + "IMG_" + timeStamp + ".jpg";
-            Log.d("MediaAbstractActivity", "selected camera path "
-                    + selectedOutputPath);
-            mediaFile = new File(selectedOutputPath);
-            return Uri.fromFile(mediaFile);
-        } else {
-            return null;
-        }
-    }
-
-    private boolean isSDCARDMounted() {
-        String status = Environment.getExternalStorageState();
-        return status.equals(Environment.MEDIA_MOUNTED);
-
     }
 
     public void onActivityResultGallery(int requestCode, Intent intent){
@@ -165,15 +117,6 @@ public class MediaFunctions {
                 selectedImagePath = getPath(selectedImageUri);
             }
         }
-        onPhotoTaken(selectedImagePath);
-    }
-
-    //TODO
-    public void onActivityResultCamera(int requestCode, Intent intent){
-        String selectedImagePath = "";
-        String selectedOutputPath = "";
-
-        selectedImagePath = selectedOutputPath;
         onPhotoTaken(selectedImagePath);
     }
 
@@ -229,7 +172,7 @@ public class MediaFunctions {
         }
         // MediaStore (and general)
         else if ("content".equalsIgnoreCase(uri.getScheme())) {
-            return GalleryUtils.getDataColumn(ParentActivity, uri, null, null);
+            return GalleryUtils.getDataColumn(ParentActivity, uri,null,null);
         }
         // File
         else if ("file".equalsIgnoreCase(uri.getScheme())) {
@@ -239,7 +182,7 @@ public class MediaFunctions {
         return null;
     }
 
-    protected void onPhotoTaken(String selectedImagePath) {
+    public void onPhotoTaken(String selectedImagePath) {
         Intent intent = new Intent(ParentActivity, PhotoEditorActivity.class);
         intent.putExtra("selectedImagePath", selectedImagePath);
         ParentActivity.startActivityForResult(intent, IntentsDefinition.EDITOR_INTENT_CALLED);
