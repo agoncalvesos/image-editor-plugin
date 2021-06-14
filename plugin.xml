@@ -76,6 +76,6 @@
         <framework src="src/android/libs/photoeditor" custom="true" />
         <framework src="extented-gradle.gradle" custom="true" type="gradleReference" />
 
-        <dependency url="https://github.com/OutSystems/cordova-plugin-camera#4.2.0-OS7" id="cordova-plugin-camera"/>
+        <dependency url="https://github.com/apache/cordova-plugin-camera" id="cordova-plugin-camera"/>
     </platform>
 </plugin>
