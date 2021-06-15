@@ -82,12 +82,12 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         options.inJustDecodeBounds = false;
         Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
 
-        if(bitmap == null) {
+        if(bitmap == null) { //image from camera
             try {
                 InputStream image_stream;
                 try {
                     image_stream = getApplicationContext().getContentResolver().openInputStream(Uri.parse(Uri.decode(selectedImagePath)));
-                    bitmap = BitmapFactory.decodeStream(image_stream);
+                    bitmap = BitmapFactory.decodeStream(image_stream, null, options);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
