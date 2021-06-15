@@ -83,6 +83,9 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
 
         if(bitmap == null) {
+            if (!selectedImagePath.startsWith("file://")){
+                selectedImagePath += "file://";
+            }
             try {
                 InputStream image_stream = getApplicationContext().getContentResolver().openInputStream(Uri.parse(Uri.decode(selectedImagePath)));
                 bitmap = BitmapFactory.decodeStream(image_stream, null, options);
