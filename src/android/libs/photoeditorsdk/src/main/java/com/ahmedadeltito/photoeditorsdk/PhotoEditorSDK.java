@@ -204,7 +204,7 @@ public class PhotoEditorSDK implements MultiTouchListener.OnMultiTouchListener {
                 FileOutputStream out = new FileOutputStream(file);
                 if (parentView != null) {
                     parentView.setDrawingCacheEnabled(true);
-                    parentView.getDrawingCache().compress(Bitmap.CompressFormat.JPEG, 80, out);
+                    parentView.getDrawingCache().compress(Bitmap.CompressFormat.JPEG, 100, out);
                 }
                 out.flush();
                 out.close();
