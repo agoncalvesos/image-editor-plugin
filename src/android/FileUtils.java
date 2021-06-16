@@ -1,13 +1,20 @@
 package com.outsystems.imageeditorplugin.Utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 
+import org.apache.cordova.BuildHelper;
+import org.apache.cordova.camera.FileProvider;
+
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -28,36 +35,40 @@ public class FileUtils {
         return base64;
     }
 
-    public static String saveImage(String folderName, String imageName, String base64) {
-        String selectedOutputPath = "";
-        if (isSDCARDMounted()) {
-            File mediaStorageDir = new File(
-                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), folderName);
-            // Create a storage directory if it does not exist
-            if (!mediaStorageDir.exists()) {
-                if (!mediaStorageDir.mkdirs()) {
-                    Log.d("PhotoEditorSDK", "Failed to create directory");
-                }
-            }
-            // Create a media file name
-            selectedOutputPath = mediaStorageDir.getPath() + File.separator + imageName;
-            Log.d("PhotoEditorSDK", "selected camera path " + selectedOutputPath);
-            File file = new File(selectedOutputPath);
+    public static String saveImage(final File cacheDir, final String imageData) {
+        final byte[] imgBytesData = android.util.Base64.decode(imageData,
+                android.util.Base64.DEFAULT);
+
+        File file = null;
+        try {
+            file = File.createTempFile("image", ".jpg", cacheDir);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        final FileOutputStream fileOutputStream;
+        try {
+            fileOutputStream = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        final BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(
+                fileOutputStream);
+        try {
+            bufferedOutputStream.write(imgBytesData);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
             try {
-                FileOutputStream out = new FileOutputStream(file);
-                byte[] decodedString = android.util.Base64.decode(base64, android.util.Base64.DEFAULT);
-                out.write(decodedString);
-                out.flush();
-                out.close();
-            } catch (Exception e) {
+                bufferedOutputStream.flush();
+                bufferedOutputStream.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        return selectedOutputPath;
-    }
-
-    private static boolean isSDCARDMounted() {
-        String status = Environment.getExternalStorageState();
-        return status.equals(Environment.MEDIA_MOUNTED);
+        return file.getAbsolutePath();
     }
 }

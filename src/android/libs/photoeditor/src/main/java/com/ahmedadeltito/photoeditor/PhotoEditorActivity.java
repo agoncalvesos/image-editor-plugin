@@ -41,6 +41,7 @@ import com.viewpagerindicator.PageIndicator;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -69,7 +70,6 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_photo_editor);
 
         String selectedImagePath = getIntent().getExtras().getString("selectedImagePath");
-
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(selectedImagePath, options);
@@ -83,8 +83,8 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
         Bitmap bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
 
         if(bitmap == null) {
-            if (!selectedImagePath.startsWith("file://")){
-                selectedImagePath += "file://";
+            if (!selectedImagePath.startsWith("file://") ){
+                selectedImagePath = "file://" + selectedImagePath;
             }
             try {
                 InputStream image_stream = getApplicationContext().getContentResolver().openInputStream(Uri.parse(Uri.decode(selectedImagePath)));
@@ -336,6 +336,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         parentImageRelativeLayout.setLayoutParams(layoutParams);
+
         new CountDownTimer(1000, 500) {
             public void onTick(long millisUntilFinished) {
 
@@ -345,7 +346,8 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                 String imageName = "IMG_" + timeStamp + ".jpg";
                 Intent returnIntent = new Intent();
-                returnIntent.putExtra("imagePath", photoEditorSDK.saveImage("PhotoEditorSDK", imageName));
+                //returnIntent.putExtra("imagePath", photoEditorSDK.saveImage("PhotoEditorSDK", imageName));
+                returnIntent.putExtra("imagePath", photoEditorSDK.saveImage( PhotoEditorActivity.this.getCacheDir(), imageName));
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();
             }

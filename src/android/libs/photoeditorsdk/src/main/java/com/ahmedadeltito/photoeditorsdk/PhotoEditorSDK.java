@@ -1,5 +1,6 @@
 package com.ahmedadeltito.photoeditorsdk;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
@@ -15,8 +16,11 @@ import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -185,7 +189,34 @@ public class PhotoEditorSDK implements MultiTouchListener.OnMultiTouchListener {
             brushDrawingView.clearAll();
     }
 
-    public String saveImage(String folderName, String imageName) {
+    public String saveImage(final File cacheDir, final String imageName) {
+        final byte[] imgBytesData = android.util.Base64.decode(imageName,
+                android.util.Base64.DEFAULT);
+
+        final File file;
+        try {
+            file = File.createTempFile("image", ".jpg", cacheDir);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            if (parentView != null) {
+                parentView.setDrawingCacheEnabled(true);
+                parentView.getDrawingCache().compress(Bitmap.CompressFormat.JPEG, 100, out);
+            }
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return file.getAbsolutePath();
+    }
+
+    /*public String saveImage(String folderName, String imageName) {
         String selectedOutputPath = "";
         if (isSDCARDMounted()) {
             File mediaStorageDir = new File(
@@ -213,7 +244,7 @@ public class PhotoEditorSDK implements MultiTouchListener.OnMultiTouchListener {
             }
         }
         return selectedOutputPath;
-    }
+    }*/
 
     private boolean isSDCARDMounted() {
         String status = Environment.getExternalStorageState();

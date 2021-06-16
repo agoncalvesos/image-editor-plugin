@@ -57,7 +57,6 @@
         <source-file src="src/android/FileUtils.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
         <source-file src="src/android/ImageEditorPlugin.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
         <source-file src="src/android/IntentsDefinition.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
-        <source-file src="src/android/MediaFunctions.java" target-dir="src/com/outsystems/imageeditorplugin/ImageEditorPlugin" />
 
         <!--<source-file src="src/ios/Assets.xcassets/0.imageset/0.png"/>
         <source-file src="src/ios/Assets.xcassets/1.imageset/1.png"/>
