@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
@@ -27,6 +28,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.outsystems.imageeditorplugin.Intents.IntentsDefinition;
+
+import android.support.v4.content.FileProvider;
 
 public class MediaFunctions {
 
@@ -56,7 +59,33 @@ public class MediaFunctions {
                     ActivityCompat.requestPermissions(ParentActivity,
                             new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
-                }
+                } 
+            }
+        });
+        builder.setNegativeButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.not_now), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(ParentActivity, ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.media_access_denied_msg), Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.show();
+    }
+	
+	   private void showMenu64(String base64){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ParentActivity);
+        builder.setMessage(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.access_media_permissions_msg));
+        builder.setPositiveButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.continue_txt), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                    ActivityCompat.requestPermissions(ParentActivity,
+                            new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE_GALLERY);
+		    	Handler postGrantHandler = new Handler();
+			postGrantHandler.postDelayed(new Runnable() {
+    			public void run() {
+				editBase64Image(base64);}
+			}, 500);
+		    
             }
         });
         builder.setNegativeButton(ParentActivity.getString(com.ahmedadeltito.photoeditor.R.string.not_now), new DialogInterface.OnClickListener() {
@@ -108,11 +137,16 @@ public class MediaFunctions {
     }
 
     public void editBase64Image(String base64){
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		int permissionCheck = PermissionChecker.checkCallingOrSelfPermission(ParentActivity,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+			showMenu64(base64);
+			} else {
+		        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageName = "IMG_" + timeStamp + ".jpg";
         String selectedOutputPath = com.outsystems.imageeditorplugin.Utils.FileUtils.saveImage("PhotoEditorSDK", imageName, base64);
-
         onPhotoTaken(selectedOutputPath);
+		}
     }
 
     private Uri getOutputMediaFile() {
@@ -135,7 +169,7 @@ public class MediaFunctions {
             Log.d("MediaAbstractActivity", "selected camera path "
                     + selectedOutputPath);
             mediaFile = new File(selectedOutputPath);
-            return Uri.fromFile(mediaFile);
+	    return FileProvider.getUriForFile(ParentActivity, ParentActivity.getApplicationContext().getPackageName() + ".provider", mediaFile);
         } else {
             return null;
         }
